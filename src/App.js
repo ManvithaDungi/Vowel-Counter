@@ -38,51 +38,31 @@ function App() {
 
   return (
     <div className="analyzer-container">
-      <div className="analyzer-header">
-        <h1>Text Analyzer</h1>
-        <div className="analyzer-subtitle">
-          A minimal tool for analyzing your text
-        </div>
-      </div>
-      
-      <div className="analyzer-input-section">
-        <textarea
-          value={text}
-          onChange={handleChange}
-          placeholder="Begin typing here..."
-          className="analyzer-textarea"
-        />
-      </div>
-      
+      <h1>Text Analyzer</h1>
+      <textarea
+        value={text}
+        onChange={handleChange}
+        placeholder="Type here..."
+        className="analyzer-textarea"
+      />
       <div className="analyzer-stats">
         <div className="stat-item">
-          <span className="stat-number">{charactersCount}</span>
-          <span className="stat-label">Characters</span>
+          <div className="stat-number">{charactersCount}</div>
+          <div className="stat-label">Characters</div>
         </div>
-        
         <div className="stat-item">
-          <span className="stat-number">{charactersNoSpacesCount}</span>
-          <span className="stat-label">Characters (no spaces)</span>
+          <div className="stat-number">{charactersNoSpacesCount}</div>
+          <div className="stat-label">No Spaces</div>
         </div>
-        
         <div className="stat-item">
-          <span className="stat-number">{wordsCount}</span>
-          <span className="stat-label">Words</span>
+          <div className="stat-number">{wordsCount}</div>
+          <div className="stat-label">Words</div>
         </div>
-        
         <div className="stat-item">
-          <span className="stat-number">{vowelsCount}</span>
-          <span className="stat-label">Vowels</span>
+          <div className="stat-number">{vowelsCount}</div>
+          <div className="stat-label">Vowels</div>
         </div>
       </div>
-      
-      {text.length > 0 && (
-        <div className="analyzer-footer">
-          <div className="reading-time">
-            Estimated reading time: {Math.ceil(wordsCount / 200)} min
-          </div>
-        </div>
-      )}
     </div>
   );
 }
